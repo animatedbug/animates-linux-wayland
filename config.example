@@ -1,0 +1,32 @@
+# animates-linux-wayland configuration.
+# install.sh writes this to ~/.config/animates-linux.conf; edit it there.
+
+# Where the Wine prefix and downloads live.
+ANIMATES_HOME="$HOME/Games/Animates"
+
+# GE-Proton directory (tested with GE-Proton11-7).
+PROTON_DIR="$HOME/.local/share/Steam/compatibilitytools.d/GE-Proton11-7-x86_64"
+
+# 1 = Wine Wayland driver + alpha layer (transparent background).
+# 0 = XWayland (black background, most compatible).
+WAYLAND=1
+
+# Where the animation AI (ONNX models via DirectML) runs:
+#   dgpu - on the discrete GPU (recommended on hybrid laptops); Ani is drawn on the iGPU
+#   igpu - everything on the integrated GPU (lighter, but Ani may stutter)
+#   cpu  - Wine's default: all CPU cores busy while Ani talks
+DML_MODE=dgpu
+
+# PCI vendor:device of the discrete GPU (dgpu mode), e.g. 10de:25a2.
+# install.sh detects it; see `lspci -nn | grep -Ei 'vga|3d'`.
+DGPU_PCI_ID=""
+
+# Vulkan ICD of the integrated GPU (igpu mode / Wayland without a dGPU).
+IGPU_ICD="/usr/share/vulkan/icd.d/intel_icd.json"
+
+# DXGI index of the integrated GPU as seen by Unity. DXVK lists the discrete GPU
+# first, so on hybrid laptops this is 1.
+UNITY_DEVICE_INDEX=1
+
+# Push-to-talk key (evdev name). Hold = voice, short tap = text chat prompt.
+PTT_KEY=KEY_RIGHTALT

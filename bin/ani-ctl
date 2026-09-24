@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Wrapper: run ani_ctl.py with the venv created by install.sh (needs websocket-client).
+REPO="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
+source "$REPO/config.example"; [ -f "$HOME/.config/animates-linux.conf" ] && source "$HOME/.config/animates-linux.conf"
+exec "$ANIMATES_HOME/venv/bin/python" "$REPO/bin/ani_ctl.py" "$@"

@@ -1,0 +1,17 @@
+{
+    "file_format_version": "1.1.2",
+    "layer": {
+        "name": "VK_LAYER_ANIMATES_alpha",
+        "type": "GLOBAL",
+        "library_path": "@LIBRARY_PATH@",
+        "api_version": "1.4.0",
+        "implementation_version": "1",
+        "description": "Premultiplied composite alpha for Animates on Wayland",
+        "functions": {
+            "vkGetInstanceProcAddr": "animates_GetInstanceProcAddr",
+            "vkGetDeviceProcAddr": "animates_GetDeviceProcAddr"
+        },
+        "enable_environment": { "ANIMATES_ALPHA_LAYER": "1" },
+        "disable_environment": { "DISABLE_ANIMATES_ALPHA_LAYER": "1" }
+    }
+}

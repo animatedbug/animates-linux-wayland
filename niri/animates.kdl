@@ -1,0 +1,20 @@
+// Animates (Ani) desktop companion via the Wine Wayland driver.
+// Append to ~/.config/niri/config.kdl (or `include` this file).
+
+// Floating, no border/focus ring/shadow/background fill so her per-pixel alpha shows through.
+window-rule {
+    match app-id=r#"^animates\.exe$"#
+    open-floating true
+    draw-border-with-background false
+    geometry-corner-radius 0
+    clip-to-geometry false
+    focus-ring { off; }
+    border { off; }
+    shadow { off; }
+}
+
+// Native chat prompt (tap the PTT key / `ani-ctl prompt`).
+window-rule {
+    match app-id=r#"zenity"# title="^Chat with Ani$"
+    open-floating true
+}
