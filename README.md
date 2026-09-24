@@ -41,7 +41,7 @@ Two of the app's models (`inbetween_*`, `body_enc`) are CPU-only by design. Idle
 ## Install
 
 ```bash
-git clone <this repo> ~/animates-linux-wayland
+git clone https://github.com/animatedbug/animates-linux-wayland ~/animates-linux-wayland
 cd ~/animates-linux-wayland
 ./install.sh ~/Downloads/Animates.exe
 ```
